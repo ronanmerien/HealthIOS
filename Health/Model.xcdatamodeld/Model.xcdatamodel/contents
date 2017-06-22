@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DoctorData" representedClassName="DoctorData" syncable="YES" codeGenerationType="class">
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="patient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PatientData" inverseName="mainDoctor" inverseEntity="PatientData" syncable="YES"/>
+    </entity>
+    <entity name="PatientData" representedClassName="PatientData" syncable="YES" codeGenerationType="class">
+        <attribute name="genre" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nom" attributeType="String" syncable="YES"/>
+        <attribute name="pictureUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prenom" attributeType="String" syncable="YES"/>
+        <attribute name="serverid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="mainDoctor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DoctorData" inverseName="patient" inverseEntity="DoctorData" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PatientData" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="DoctorData" positionX="-54" positionY="-9" width="128" height="75"/>
+    </elements>
+</model>
